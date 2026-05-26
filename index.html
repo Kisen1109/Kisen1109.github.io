@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOU KISEN — PORTFOLIO / 作品集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ========== Visual FX Layers ========== -->
+<div class="fx-noise" aria-hidden="true"></div>
+<div class="fx-scanlines" aria-hidden="true"></div>
+<div class="fx-grid" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ========== Page Transition Mask ========== -->
+<div class="page-mask" id="pageMask" aria-hidden="true">
+  <div class="mask-panel"></div>
+  <div class="mask-panel"></div>
+  <div class="mask-panel"></div>
+  <div class="mask-panel"></div>
+  <div class="mask-label"><span class="glitch" data-text="LOADING">LOADING</span> <i>/</i> <em id="maskTarget">PORTFOLIO</em></div>
+</div>
+
+<!-- ========== Side Rail (left tech UI) ========== -->
+<aside class="rail rail-left" aria-hidden="true">
+  <div class="rail-block">
+    <div class="rail-tag">PRJ_2026</div>
+    <div class="rail-divider"></div>
+    <div class="rail-coord">N 35°42'<br>E 139°42'</div>
+  </div>
+  <div class="rail-vt">PORTFOLIO / SOU.KISEN / MUSABI</div>
+  <div class="rail-block">
+    <div class="rail-dot"></div>
+    <div class="rail-tag rail-status">SYS · ONLINE</div>
+  </div>
+</aside>
+
+<!-- ========== Side Rail (right meta) ========== -->
+<aside class="rail rail-right" aria-hidden="true">
+  <div class="rail-block">
+    <div class="rail-tag">v3.0 / 2026.05</div>
+  </div>
+  <div class="rail-counter" id="railCounter">01 / 04</div>
+  <div class="rail-block">
+    <div class="rail-bar"><i></i></div>
+  </div>
+</aside>
+
+<!-- ========== Top Bar ========== -->
+<header class="topbar">
+  <a href="#home" class="brand" data-target="home">
+    <span class="brand-mark">[ KSN ]</span>
+    <span class="brand-name">SOU&nbsp;KISEN <i>·</i> ソウ&nbsp;キセン</span>
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-label="open menu">
+    <span class="menu-btn-text">Menu</span>
+    <span class="menu-btn-icon">
+      <i></i><i></i><i></i>
+    </span>
+  </button>
+</header>
+
+<!-- ========== Menu Overlay ========== -->
+<nav class="menu-overlay" id="menuOverlay" aria-hidden="true">
+  <div class="menu-bg"></div>
+  <div class="menu-inner">
+    <div class="menu-meta">
+      <span class="menu-meta-tag">// NAVIGATION</span>
+      <span class="menu-meta-coord">04 ENTRIES</span>
+    </div>
+    <ul class="menu-list">
+      <li data-target="home" class="is-active">
+        <span class="m-num">01</span>
+        <span class="m-en">HOME</span>
+        <span class="m-jp">ホーム</span>
+        <span class="m-line"></span>
+      </li>
+      <li data-target="about">
+        <span class="m-num">02</span>
+        <span class="m-en">ABOUT&nbsp;ME</span>
+        <span class="m-jp">プロフィール</span>
+        <span class="m-line"></span>
+      </li>
+      <li data-target="photos">
+        <span class="m-num">03</span>
+        <span class="m-en">PHOTOGRAPHS</span>
+        <span class="m-jp">撮影作品</span>
+        <span class="m-line"></span>
+      </li>
+      <li data-target="arts">
+        <span class="m-num">04</span>
+        <span class="m-en">ARTS</span>
+        <span class="m-jp">デザイン作品</span>
+        <span class="m-line"></span>
+      </li>
+    </ul>
+    <div class="menu-foot">
+      <span>© 2026 SOU KISEN</span>
+      <span>MUSASHINO ART UNIV. / DESIGN INFORMATICS</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== Pages ========== -->
+<main class="stage" id="stage">
+
+  <!-- ===== HOME ===== -->
+  <section class="page page-home is-active" data-page="home">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-meta">
+        <span>[ 01 / HERO ]</span>
+        <span>SCROLL ↓</span>
+      </div>
+
+      <!-- Animated Hexagon Stage -->
+      <div class="hex-stage">
+        <div class="hex-glow"></div>
+        <div class="hex-orbit hex-orbit-a"></div>
+        <div class="hex-orbit hex-orbit-b"></div>
+
+        <svg class="hex-svg" viewBox="-160 -160 320 320" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="hexFill" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"  stop-color="#FFE5F0"/>
+              <stop offset="35%" stop-color="#FFB3D1"/>
+              <stop offset="70%" stop-color="#FF6B9D"/>
+              <stop offset="100%" stop-color="#FF3D8A"/>
+            </linearGradient>
+            <linearGradient id="hexShine" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"  stop-color="#ffffff" stop-opacity="0"/>
+              <stop offset="45%" stop-color="#ffffff" stop-opacity=".0"/>
+              <stop offset="50%" stop-color="#ffffff" stop-opacity=".55"/>
+              <stop offset="55%" stop-color="#ffffff" stop-opacity=".0"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="hexStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"  stop-color="#FFB3D1"/>
+              <stop offset="50%" stop-color="#B47FE5"/>
+              <stop offset="100%" stop-color="#7FE5D8"/>
+            </linearGradient>
+            <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2"/>
+            </filter>
+          </defs>
+
+          <!-- Outer iridescent ring -->
+          <polygon class="hex-ring"
+                   points="0,-148 128.2,-74 128.2,74 0,148 -128.2,74 -128.2,-74"
+                   fill="none" stroke="url(#hexStroke)" stroke-width="0.8"
+                   stroke-dasharray="4 6" opacity=".55"/>
+
+          <!-- Main hex (filled) -->
+          <polygon class="hex-main"
+                   points="0,-130 112.6,-65 112.6,65 0,130 -112.6,65 -112.6,-65"
+                   fill="url(#hexFill)"/>
+
+          <!-- Moving shine band -->
+          <polygon class="hex-shine"
+                   points="0,-130 112.6,-65 112.6,65 0,130 -112.6,65 -112.6,-65"
+                   fill="url(#hexShine)"/>
+
+          <!-- Inner stroke -->
+          <polygon class="hex-inner"
+                   points="0,-105 90.9,-52.5 90.9,52.5 0,105 -90.9,52.5 -90.9,-52.5"
+                   fill="none" stroke="#fff" stroke-opacity=".35" stroke-width=".6"/>
+
+          <!-- Tiny crosshair markers -->
+          <g class="hex-marks" stroke="#fff" stroke-width=".6" opacity=".6">
+            <line x1="0" y1="-138" x2="0" y2="-125"/>
+            <line x1="0" y1="125" x2="0" y2="138"/>
+            <line x1="-138" y1="0" x2="-125" y2="0"/>
+            <line x1="125" y1="0" x2="138" y2="0"/>
+          </g>
+
+          <!-- Inner arrow / chevron -->
+          <polygon class="hex-arrow" points="0,18 -10,4 -3,4 -3,-12 3,-12 3,4 10,4"
+                   fill="#fff" opacity=".85"/>
+        </svg>
+
+        <!-- Title overlay -->
+        <div class="hex-title">
+          <h1 class="t-zh">作&ensp;品&ensp;集</h1>
+          <h2 class="t-en">
+            <span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- Decorative line with diamond -->
+      <div class="hero-line">
+        <span class="dot"></span>
+        <span class="bar"></span>
+        <span class="diamond"></span>
+        <span class="bar"></span>
+        <span class="dot"></span>
+      </div>
+
+      <button class="scroll-cta" id="scrollCta">
+        <span>about me</span>
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 4v14m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <!-- ABOUT SECTION (scroll target) -->
+    <div class="about" id="about">
+      <div class="about-bg"></div>
+
+      <div class="about-meta">
+        <span>[ 02 / PROFILE ]</span>
+        <span class="blink">●</span> <span>REC</span>
+      </div>
+
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring avatar-ring-2"></div>
+        <div class="avatar">
+          <img class="avatar-img" src="assets/avatar.png" alt="Sou Kisen portrait" />
+          <span class="avatar-tag">SUBJECT_01</span>
+        </div>
+      </div>
+
+      <div class="bio">
+        <p class="bio-line"><span class="bio-key">学校</span><span class="bio-val">武蔵野美術大学&nbsp;&nbsp;デザイン情報学科&nbsp;3年</span></p>
+        <p class="bio-line"><span class="bio-key">出身</span><span class="bio-val">中国・洛陽 &nbsp;|&nbsp; ソウ&nbsp;キセン</span></p>
+        <p class="bio-line"><span class="bio-key">趣味</span><span class="bio-val">ゲーム · 撮影 · 猫</span></p>
+      </div>
+
+      <!-- Skill chips -->
+      <div class="skills">
+        <div class="skills-head">
+          <span class="skills-title">// TOOLKIT</span>
+          <span class="skills-count">06</span>
+        </div>
+        <ul class="skill-grid">
+          <li><img class="sk-mark" src="assets/icon-figma.svg" alt="Figma"/><b>Figma</b><i>UI / Design</i></li>
+          <li><img class="sk-mark" src="assets/icon-procreate.svg" alt="Procreate"/><b>Procreate</b><i>Illustration</i></li>
+          <li><img class="sk-mark" src="assets/icon-clipstudio.svg" alt="Clip Studio"/><b>Clip&nbsp;Studio</b><i>Illustration</i></li>
+          <li><img class="sk-mark" src="assets/icon-ps.svg" alt="Photoshop"/><b>Photoshop</b><i>Image / Photo</i></li>
+          <li><img class="sk-mark" src="assets/icon-id.svg" alt="InDesign"/><b>InDesign</b><i>Editorial</i></li>
+          <li><img class="sk-mark" src="assets/icon-ai.svg" alt="Illustrator"/><b>Illustrator</b><i>Vector</i></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHOTOGRAPHS ===== -->
+  <section class="page page-photos" data-page="photos">
+    <div class="sub-hero sub-hero-dark">
+      <div class="sub-meta">
+        <span>[ 03 / PHOTOGRAPHS ]</span>
+        <span>撮影作品&nbsp;·&nbsp;2023 — 2026</span>
+      </div>
+      <h2 class="sub-title">
+        <span class="big">Photographs</span>
+        <span class="sml">記録された<i>瞬間</i>。Captured&nbsp;moments.</span>
+      </h2>
+      <div class="sub-line"><i></i><b>●</b><i></i></div>
+    </div>
+
+    <!-- Featured Photo -->
+    <div class="photo-feature lightbox-trigger"
+         data-src="assets/photos/photo-09.jpg"
+         data-num="FEATURED"
+         data-title="彼岸花 — Higanbana"
+         data-meta="Portrait · Close-up">
+      <img src="assets/photos/photo-09.jpg" alt="Higanbana close-up"/>
+      <div class="photo-feature-overlay"></div>
+      <div class="photo-feature-info">
+        <span class="pf-tag">FEATURED</span>
+        <h3>彼岸花<i>·</i> Higanbana</h3>
+      </div>
+    </div>
+
+    <div class="works-head">
+      <span class="wh-l">// PHOTO INDEX</span>
+      <span class="wh-r">20 ENTRIES</span>
+    </div>
+
+    <div class="gallery gallery-photos no-caption">
+      <article class="card card-tall lightbox-trigger" style="--i:0"
+               data-src="assets/photos/photo-13.jpg" data-num="01" data-title="紫猫 · Purple Cat" data-meta="Portrait">
+        <img class="card-img" src="assets/photos/photo-13.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:1"
+               data-src="assets/photos/photo-14.jpg" data-num="02" data-title="集合 · Group" data-meta="Group portrait">
+        <img class="card-img" src="assets/photos/photo-14.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:2"
+               data-src="assets/photos/photo-01.jpg" data-num="03" data-title="紅 · Crimson" data-meta="Indoor portrait">
+        <img class="card-img" src="assets/photos/photo-01.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:3"
+               data-src="assets/photos/photo-02.jpg" data-num="04" data-title="紫陰 · Reaper" data-meta="Street portrait">
+        <img class="card-img" src="assets/photos/photo-02.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:4"
+               data-src="assets/photos/photo-17.jpg" data-num="05" data-title="唐風 · Tang" data-meta="Cat ears · Chinese style">
+        <img class="card-img" src="assets/photos/photo-17.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:5"
+               data-src="assets/photos/photo-20.jpg" data-num="06" data-title="蒼鬼 · Blue Oni I" data-meta="Japanese room · Pine">
+        <img class="card-img" src="assets/photos/photo-20.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:6"
+               data-src="assets/photos/photo-21.jpg" data-num="07" data-title="蒼鬼 · Blue Oni II" data-meta="Through leaves">
+        <img class="card-img" src="assets/photos/photo-21.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:7"
+               data-src="assets/photos/photo-03.jpg" data-num="08" data-title="休息 · Lounge" data-meta="Cafe portrait">
+        <img class="card-img" src="assets/photos/photo-03.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:8"
+               data-src="assets/photos/photo-15.jpg" data-num="09" data-title="クマ · Bear" data-meta="Interior scene">
+        <img class="card-img" src="assets/photos/photo-15.jpg" alt=""/>
+      </article>
+      <article class="card lightbox-trigger" style="--i:9"
+               data-src="assets/photos/photo-04.jpg" data-num="10" data-title="ゲーセン · Game Center" data-meta="Akihabara">
+        <img class="card-img" src="assets/photos/photo-04.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:10"
+               data-src="assets/photos/photo-18.jpg" data-num="11" data-title="まなざし · Glance" data-meta="Cat ears">
+        <img class="card-img" src="assets/photos/photo-18.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:11"
+               data-src="assets/photos/photo-05.jpg" data-num="12" data-title="蒼夜 · Blue Night" data-meta="Night street">
+        <img class="card-img" src="assets/photos/photo-05.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:12"
+               data-src="assets/photos/photo-19.jpg" data-num="13" data-title="双 · Pair" data-meta="Two characters">
+        <img class="card-img" src="assets/photos/photo-19.jpg" alt=""/>
+      </article>
+      <article class="card lightbox-trigger" style="--i:13"
+               data-src="assets/photos/photo-06.jpg" data-num="14" data-title="しゃがみ · Crouch" data-meta="Akihabara">
+        <img class="card-img" src="assets/photos/photo-06.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:14"
+               data-src="assets/photos/photo-07.jpg" data-num="15" data-title="取景 · Frame" data-meta="Park portrait">
+        <img class="card-img" src="assets/photos/photo-07.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:15"
+               data-src="assets/photos/photo-16.jpg" data-num="16" data-title="窓辺 · Window" data-meta="Indoor light">
+        <img class="card-img" src="assets/photos/photo-16.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:16"
+               data-src="assets/photos/photo-08.jpg" data-num="17" data-title="桃妖 · Pink Pixie" data-meta="Indoor portrait">
+        <img class="card-img" src="assets/photos/photo-08.jpg" alt=""/>
+      </article>
+      <article class="card lightbox-trigger" style="--i:17"
+               data-src="assets/photos/photo-10.jpg" data-num="18" data-title="ベンチ · Park Bench" data-meta="Tokyo park">
+        <img class="card-img" src="assets/photos/photo-10.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:18"
+               data-src="assets/photos/photo-11.jpg" data-num="19" data-title="森歩 · Forest Walk" data-meta="Park">
+        <img class="card-img" src="assets/photos/photo-11.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:19"
+               data-src="assets/photos/photo-12.jpg" data-num="20" data-title="フード · Hood" data-meta="Park bench">
+        <img class="card-img" src="assets/photos/photo-12.jpg" alt=""/>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== ARTS ===== -->
+  <section class="page page-arts" data-page="arts">
+    <div class="sub-hero sub-hero-pink">
+      <div class="sub-meta">
+        <span>[ 04 / ARTS ]</span>
+        <span>デザイン作品&nbsp;·&nbsp;2023 — 2026</span>
+      </div>
+      <h2 class="sub-title">
+        <span class="big">Arts</span>
+        <span class="sml">描いた<i>世界</i>。Illustration&nbsp;&amp;&nbsp;Design.</span>
+      </h2>
+      <div class="sub-line"><i></i><b>◆</b><i></i></div>
+    </div>
+
+    <!-- FEATURED PROJECT: Solstice Blossoms -->
+    <section class="featured" id="ftProject">
+      <div class="featured-head">
+        <div class="ft-stamp">
+          <span class="ft-stamp-num">PROJECT&nbsp;/&nbsp;01</span>
+          <span class="ft-stamp-tag">FULL&nbsp;CASE&nbsp;STUDY</span>
+        </div>
+        <h3 class="ft-title">
+          <span class="ft-en">Solstice&nbsp;Blossoms</span>
+          <span class="ft-jp">ソルスティス・ブロッサム&nbsp;&nbsp;|&nbsp;&nbsp;梅 &amp; 蓮</span>
+        </h3>
+        <p class="ft-desc">
+          武蔵野美術大学&nbsp;Art&nbsp;Direction&nbsp;授業課題。<br>
+          龍族の幼馴染「梅（Mei）」と「蓮（Ren）」を主役にしたキャラクター企画。設定資料から缶バッジ・アクリル・ぬいぐるみまでの一貫したアートディレクション。
+        </p>
+      </div>
+
+      <!-- Horizontal Scroll Showcase -->
+      <div class="ft-scroll-wrap">
+        <div class="ft-scroll-meta">
+          <span>↔ DRAG · SCROLL</span>
+          <span id="ftCounter">01 / 06</span>
+        </div>
+        <div class="ft-scroll" id="ftScroll">
+          <article class="ft-slide lightbox-trigger" style="--i:0"
+                   data-src="assets/project/page-1.jpg" data-num="01 / 06" data-title="Cover · 表紙" data-meta="Magazine cover">
+            <div class="ft-slide-img"><img src="assets/project/page-1.jpg" alt="Cover"/></div>
+            <div class="ft-slide-cap">
+              <span>01 &nbsp;·&nbsp; 06</span>
+              <b>Cover&nbsp;·&nbsp;表紙</b>
+            </div>
+          </article>
+          <article class="ft-slide lightbox-trigger" style="--i:1"
+                   data-src="assets/project/page-2.jpg" data-num="02 / 06" data-title="Character · キャラクター" data-meta="Mei (梅) &amp; Ren (蓮)">
+            <div class="ft-slide-img"><img src="assets/project/page-2.jpg" alt="Characters"/></div>
+            <div class="ft-slide-cap">
+              <span>02 &nbsp;·&nbsp; 06</span>
+              <b>Character&nbsp;Design</b>
+            </div>
+          </article>
+          <article class="ft-slide lightbox-trigger" style="--i:2"
+                   data-src="assets/project/page-3.jpg" data-num="03 / 06" data-title="Can Badge · 缶バッジ" data-meta="Rough &amp; Final art">
+            <div class="ft-slide-img"><img src="assets/project/page-3.jpg" alt="Can Badge"/></div>
+            <div class="ft-slide-cap">
+              <span>03 &nbsp;·&nbsp; 06</span>
+              <b>Can&nbsp;Badge&nbsp;·&nbsp;缶バッジ</b>
+            </div>
+          </article>
+          <article class="ft-slide lightbox-trigger" style="--i:3"
+                   data-src="assets/project/page-4.jpg" data-num="04 / 06" data-title="Design Sheets · 設計図" data-meta="Plush &amp; Acrylic blueprints">
+            <div class="ft-slide-img"><img src="assets/project/page-4.jpg" alt="Design Sheets"/></div>
+            <div class="ft-slide-cap">
+              <span>04 &nbsp;·&nbsp; 06</span>
+              <b>Design&nbsp;Sheets&nbsp;·&nbsp;設計図</b>
+            </div>
+          </article>
+          <article class="ft-slide lightbox-trigger" style="--i:4"
+                   data-src="assets/project/page-5.jpg" data-num="05 / 06" data-title="Merchandise · グッズ製品" data-meta="Stands · Badges · Keychains">
+            <div class="ft-slide-img"><img src="assets/project/page-5.jpg" alt="Merchandise"/></div>
+            <div class="ft-slide-cap">
+              <span>05 &nbsp;·&nbsp; 06</span>
+              <b>Merchandise&nbsp;·&nbsp;グッズ</b>
+            </div>
+          </article>
+          <article class="ft-slide lightbox-trigger" style="--i:5"
+                   data-src="assets/project/page-6.jpg" data-num="06 / 06" data-title="Plushie · ぬいぐるみ" data-meta="Finished plush dolls">
+            <div class="ft-slide-img"><img src="assets/project/page-6.jpg" alt="Plushie"/></div>
+            <div class="ft-slide-cap">
+              <span>06 &nbsp;·&nbsp; 06</span>
+              <b>Plushie&nbsp;·&nbsp;ぬいぐるみ</b>
+            </div>
+          </article>
+        </div>
+        <div class="ft-scroll-bar"><i id="ftBar"></i></div>
+      </div>
+    </section>
+
+    <div class="works-head">
+      <span class="wh-l">// OTHER&nbsp;WORKS</span>
+      <span class="wh-r">10 ENTRIES</span>
+    </div>
+
+    <div class="gallery gallery-arts">
+      <article class="card card-tall lightbox-trigger" style="--i:0"
+               data-src="assets/arts/art-01.jpg" data-num="01" data-title="Slytherin OC" data-meta="Illustration">
+        <img class="card-img" src="assets/arts/art-01.jpg" alt=""/>
+        <div class="card-info"><span>01</span><b>Slytherin&nbsp;OC</b></div>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:1"
+               data-src="assets/arts/art-02.jpg" data-num="02" data-title="ミント · Mint" data-meta="Character Design">
+        <img class="card-img" src="assets/arts/art-02.jpg" alt=""/>
+        <div class="card-info"><span>02</span><b>ミント&nbsp;·&nbsp;Mint</b></div>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:2"
+               data-src="assets/arts/art-08.jpg" data-num="03" data-title="Vessel · 器" data-meta="Fine Art · Diptych">
+        <img class="card-img" src="assets/arts/art-08.jpg" alt=""/>
+        <div class="card-info"><span>03</span><b>Vessel&nbsp;·&nbsp;器</b></div>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:3"
+               data-src="assets/arts/art-03.jpg" data-num="04" data-title="Masked Warrior · 紅夜" data-meta="Illustration">
+        <img class="card-img" src="assets/arts/art-03.jpg" alt=""/>
+        <div class="card-info"><span>04</span><b>Masked&nbsp;Warrior</b></div>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:4"
+               data-src="assets/arts/art-10.jpg" data-num="05" data-title="ミライノヨチ · Premonition" data-meta="Illustration · Poster">
+        <img class="card-img" src="assets/arts/art-10.jpg" alt=""/>
+        <div class="card-info"><span>05</span><b>ミライノヨチ</b></div>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:5"
+               data-src="assets/arts/art-06.jpg" data-num="06" data-title="Pop Surrealism" data-meta="Acid Graphic">
+        <img class="card-img" src="assets/arts/art-06.jpg" alt=""/>
+        <div class="card-info"><span>06</span><b>Pop&nbsp;Surrealism</b></div>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:6"
+               data-src="assets/arts/art-09.jpg" data-num="07" data-title="Distortion · 歪み" data-meta="Acid Illustration">
+        <img class="card-img" src="assets/arts/art-09.jpg" alt=""/>
+        <div class="card-info"><span>07</span><b>Distortion&nbsp;·&nbsp;歪み</b></div>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:7"
+               data-src="assets/arts/art-07.jpg" data-num="08" data-title="Bandaged Eye" data-meta="Illustration">
+        <img class="card-img" src="assets/arts/art-07.jpg" alt=""/>
+        <div class="card-info"><span>08</span><b>Bandaged&nbsp;Eye</b></div>
+      </article>
+      <article class="card lightbox-trigger" style="--i:8"
+               data-src="assets/arts/art-04.jpg" data-num="09" data-title="Still Life · Sweep" data-meta="Pencil Sketch">
+        <img class="card-img" src="assets/arts/art-04.jpg" alt=""/>
+        <div class="card-info"><span>09</span><b>Still&nbsp;Life&nbsp;I</b></div>
+      </article>
+      <article class="card lightbox-trigger" style="--i:9"
+               data-src="assets/arts/art-05.jpg" data-num="10" data-title="Still Life · Gloves" data-meta="Pencil Sketch">
+        <img class="card-img" src="assets/arts/art-05.jpg" alt=""/>
+        <div class="card-info"><span>10</span><b>Still&nbsp;Life&nbsp;II</b></div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>SOU&nbsp;KISEN · 2026</span>
+  <span class="foot-mid">— END&nbsp;OF&nbsp;TRANSMISSION —</span>
+  <span>kisen522@gmail.com</span>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lb-bg"></div>
+  <button class="lb-close" id="lbClose" aria-label="close">
+    <span></span><span></span>
+  </button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="previous">‹</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="next">›</button>
+  <div class="lb-stage">
+    <img id="lbImg" src="" alt=""/>
+  </div>
+  <div class="lb-caption">
+    <span id="lbNum">01</span>
+    <b id="lbTitle">—</b>
+    <i id="lbMeta">—</i>
+  </div>
+  <div class="lb-corner">
+    <span class="glitch" data-text="EXPAND">EXPAND</span>
+    <i>/</i><em>FULL VIEW</em>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

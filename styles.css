@@ -646,7 +646,9 @@ img,svg{display:block;max-width:100%}
   filter:blur(40px);
   pointer-events:none;
 }
-.featured-head{position:relative;display:flex;flex-direction:column;gap:18px;margin-bottom:40px;max-width:880px}
+.featured-head{position:relative;display:flex;flex-direction:column;gap:18px;margin-bottom:40px;max-width:1100px;overflow:visible}
+.ft-title{overflow:visible;padding-right:.15em}
+.ft-en{padding-right:.08em;line-height:1.05}
 .featured-head .ft-desc{
   font-family:var(--font-serif);font-size:15px;line-height:1.85;
   color:rgba(255,255,255,.78);margin-top:4px;

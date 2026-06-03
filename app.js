@@ -271,6 +271,34 @@
     });
   }
 
+  /* ---------- Hero Video sound toggle ---------- */
+  const heroVideo = $('#heroVideo');
+  const videoSound = $('#videoSound');
+  if (heroVideo && videoSound) {
+    videoSound.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const isMuted = heroVideo.muted;
+      if (isMuted) {
+        // Switch to the audio version
+        const currentTime = heroVideo.currentTime;
+        heroVideo.src = 'assets/video/hero-full.mp4';
+        heroVideo.muted = false;
+        heroVideo.currentTime = currentTime;
+        try { await heroVideo.play(); } catch(e) {}
+        videoSound.dataset.state = 'on';
+        videoSound.querySelector('.vs-text').textContent = 'SOUND ON';
+      } else {
+        heroVideo.muted = true;
+        const currentTime = heroVideo.currentTime;
+        heroVideo.src = 'assets/video/hero-mute.mp4';
+        heroVideo.currentTime = currentTime;
+        try { await heroVideo.play(); } catch(e) {}
+        videoSound.dataset.state = 'muted';
+        videoSound.querySelector('.vs-text').textContent = 'SOUND';
+      }
+    });
+  }
+
   /* ---------- Initial state ---------- */
   updateRail('home');
 })();

@@ -630,6 +630,52 @@ img,svg{display:block;max-width:100%}
 }
 .photo-feature-corner span:nth-child(2){opacity:.5}
 
+/* Featured Video Hero */
+.photo-feature-video{cursor:default}
+.photo-feature-video .hero-video{
+  width:100%;height:min(78vh,720px);object-fit:cover;
+  border-radius:20px;
+  display:block;
+  background:#0A0A14;
+}
+.photo-feature-video .photo-feature-overlay{
+  background:linear-gradient(180deg,rgba(0,0,0,.0) 0%,rgba(0,0,0,.15) 50%,rgba(0,0,0,.7) 100%);
+}
+.photo-feature-video .pf-tag{background:linear-gradient(90deg,#FF3D8A,#B47FE5);}
+/* Sound toggle button (bottom right) */
+.video-sound{
+  position:absolute;right:104px;bottom:48px;z-index:3;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 16px 10px 14px;
+  border-radius:99px;
+  background:rgba(10,10,20,.55);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;
+  cursor:none;
+  transition:transform .3s var(--easing),background .3s,border-color .3s;
+}
+.video-sound:hover{
+  transform:translateY(-2px);
+  background:rgba(255,61,138,.4);
+  border-color:rgba(255,107,157,.6);
+}
+.video-sound .vs-icon{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px}
+.video-sound .vs-on{display:none}
+.video-sound[data-state="on"] .vs-mute{display:none}
+.video-sound[data-state="on"] .vs-on{display:inline-flex}
+.video-sound[data-state="on"]{background:rgba(255,61,138,.6);border-color:rgba(255,107,157,.7)}
+
+@media (max-width:1024px){
+  .video-sound{right:64px;bottom:32px}
+}
+@media (max-width:640px){
+  .photo-feature-video .hero-video{height:54vh;border-radius:14px}
+  .video-sound{right:36px;bottom:24px;padding:8px 12px;font-size:9px}
+  .video-sound .vs-text{display:none}
+}
+
 /* ---------- Featured Project (Arts page) ---------- */
 .featured{
   position:relative;

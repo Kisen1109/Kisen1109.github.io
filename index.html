@@ -268,23 +268,36 @@
       <div class="sub-line"><i></i><b>●</b><i></i></div>
     </div>
 
-    <!-- Featured Photo -->
-    <div class="photo-feature lightbox-trigger"
-         data-src="assets/photos/photo-09.jpg"
-         data-num="FEATURED"
-         data-title="彼岸花 — Higanbana"
-         data-meta="Portrait · Close-up">
-      <img src="assets/photos/photo-09.jpg" alt="Higanbana close-up"/>
+    <!-- Featured Video Hero -->
+    <div class="photo-feature photo-feature-video">
+      <video id="heroVideo" class="hero-video"
+             src="assets/video/hero-mute.mp4"
+             poster="assets/video/hero-poster.jpg"
+             autoplay muted loop playsinline preload="metadata"></video>
       <div class="photo-feature-overlay"></div>
       <div class="photo-feature-info">
-        <span class="pf-tag">FEATURED</span>
-        <h3>彼岸花<i>·</i> Higanbana</h3>
+        <span class="pf-tag">FEATURED · VIDEO</span>
+        <h3>Late Night<i>·</i> 夜更け</h3>
       </div>
+      <!-- Sound toggle button (bottom right) -->
+      <button class="video-sound" id="videoSound" aria-label="toggle sound" data-state="muted">
+        <span class="vs-icon vs-mute">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/>
+          </svg>
+        </span>
+        <span class="vs-icon vs-on">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 010 7"/><path d="M18.5 5.5a9 9 0 010 13"/>
+          </svg>
+        </span>
+        <span class="vs-text">SOUND</span>
+      </button>
     </div>
 
     <div class="works-head">
       <span class="wh-l">// PHOTO INDEX</span>
-      <span class="wh-r">26 ENTRIES</span>
+      <span class="wh-r">30 ENTRIES</span>
     </div>
 
     <div class="gallery gallery-photos no-caption">
@@ -392,6 +405,22 @@
                data-src="assets/photos/photo-12.jpg" data-num="26" data-title="フード · Hood" data-meta="Park bench">
         <img class="card-img" src="assets/photos/photo-12.jpg" alt=""/>
       </article>
+      <article class="card card-tall lightbox-trigger" style="--i:26"
+               data-src="assets/photos/photo-28.jpg" data-num="27" data-title="鏡 · Reflection" data-meta="Mirror portrait">
+        <img class="card-img" src="assets/photos/photo-28.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:27"
+               data-src="assets/photos/photo-29.jpg" data-num="28" data-title="渋谷 · Shibuya" data-meta="Neon night">
+        <img class="card-img" src="assets/photos/photo-29.jpg" alt=""/>
+      </article>
+      <article class="card card-tall lightbox-trigger" style="--i:28"
+               data-src="assets/photos/photo-30.jpg" data-num="29" data-title="緑陰 · Nightshade" data-meta="Plant portrait">
+        <img class="card-img" src="assets/photos/photo-30.jpg" alt=""/>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:29"
+               data-src="assets/photos/photo-09.jpg" data-num="30" data-title="彼岸花 · Higanbana" data-meta="Red eyes close-up">
+        <img class="card-img" src="assets/photos/photo-09.jpg" alt=""/>
+      </article>
     </div>
   </section>
 
@@ -414,15 +443,15 @@
       <div class="featured-head">
         <div class="ft-stamp">
           <span class="ft-stamp-num">PROJECT&nbsp;/&nbsp;01</span>
-          <span class="ft-stamp-tag">FULL&nbsp;CASE&nbsp;STUDY</span>
+          <span class="ft-stamp-tag">EDITORIAL&nbsp;·&nbsp;17&nbsp;SPREADS</span>
         </div>
         <h3 class="ft-title">
-          <span class="ft-en">Solstice&nbsp;Blossoms</span>
-          <span class="ft-jp">ソルスティス・ブロッサム&nbsp;&nbsp;|&nbsp;&nbsp;梅 &amp; 蓮</span>
+          <span class="ft-en">FORMLESS&nbsp;Vol.01</span>
+          <span class="ft-jp">フォームレス&nbsp;第1号&nbsp;&nbsp;|&nbsp;&nbsp;Solstice&nbsp;Blossoms&nbsp;特集</span>
         </h3>
         <p class="ft-desc">
           武蔵野美術大学&nbsp;Art&nbsp;Direction&nbsp;授業課題。<br>
-          龍族の幼馴染「梅（Mei）」と「蓮（Ren）」を主役にしたキャラクター企画。設定資料から缶バッジ・アクリル・ぬいぐるみまでの一貫したアートディレクション。
+          自主編集の雑誌「FORMLESS」第1号。表紙＆特集はオリジナルキャラクター企画「Solstice&nbsp;Blossoms」——龍族の幼馴染「梅（Mei）」と「蓮（Ren）」を主役にした設定資料・原稿・グッズ展開。さらにグラフィックデザイン特集とデザイナーインタビューを収録した全17見開きの完全版。
         </p>
       </div>
 
@@ -430,57 +459,26 @@
       <div class="ft-scroll-wrap">
         <div class="ft-scroll-meta">
           <span>↔ DRAG · SCROLL</span>
-          <span id="ftCounter">01 / 06</span>
+          <span id="ftCounter">01 / 17</span>
         </div>
         <div class="ft-scroll" id="ftScroll">
-          <article class="ft-slide lightbox-trigger" style="--i:0"
-                   data-src="assets/project/page-1.jpg" data-num="01 / 06" data-title="Cover · 表紙" data-meta="Magazine cover">
-            <div class="ft-slide-img"><img src="assets/project/page-1.jpg" alt="Cover"/></div>
-            <div class="ft-slide-cap">
-              <span>01 &nbsp;·&nbsp; 06</span>
-              <b>Cover&nbsp;·&nbsp;表紙</b>
-            </div>
-          </article>
-          <article class="ft-slide lightbox-trigger" style="--i:1"
-                   data-src="assets/project/page-2.jpg" data-num="02 / 06" data-title="Character · キャラクター" data-meta="Mei (梅) &amp; Ren (蓮)">
-            <div class="ft-slide-img"><img src="assets/project/page-2.jpg" alt="Characters"/></div>
-            <div class="ft-slide-cap">
-              <span>02 &nbsp;·&nbsp; 06</span>
-              <b>Character&nbsp;Design</b>
-            </div>
-          </article>
-          <article class="ft-slide lightbox-trigger" style="--i:2"
-                   data-src="assets/project/page-3.jpg" data-num="03 / 06" data-title="Can Badge · 缶バッジ" data-meta="Rough &amp; Final art">
-            <div class="ft-slide-img"><img src="assets/project/page-3.jpg" alt="Can Badge"/></div>
-            <div class="ft-slide-cap">
-              <span>03 &nbsp;·&nbsp; 06</span>
-              <b>Can&nbsp;Badge&nbsp;·&nbsp;缶バッジ</b>
-            </div>
-          </article>
-          <article class="ft-slide lightbox-trigger" style="--i:3"
-                   data-src="assets/project/page-4.jpg" data-num="04 / 06" data-title="Design Sheets · 設計図" data-meta="Plush &amp; Acrylic blueprints">
-            <div class="ft-slide-img"><img src="assets/project/page-4.jpg" alt="Design Sheets"/></div>
-            <div class="ft-slide-cap">
-              <span>04 &nbsp;·&nbsp; 06</span>
-              <b>Design&nbsp;Sheets&nbsp;·&nbsp;設計図</b>
-            </div>
-          </article>
-          <article class="ft-slide lightbox-trigger" style="--i:4"
-                   data-src="assets/project/page-5.jpg" data-num="05 / 06" data-title="Merchandise · グッズ製品" data-meta="Stands · Badges · Keychains">
-            <div class="ft-slide-img"><img src="assets/project/page-5.jpg" alt="Merchandise"/></div>
-            <div class="ft-slide-cap">
-              <span>05 &nbsp;·&nbsp; 06</span>
-              <b>Merchandise&nbsp;·&nbsp;グッズ</b>
-            </div>
-          </article>
-          <article class="ft-slide lightbox-trigger" style="--i:5"
-                   data-src="assets/project/page-6.jpg" data-num="06 / 06" data-title="Plushie · ぬいぐるみ" data-meta="Finished plush dolls">
-            <div class="ft-slide-img"><img src="assets/project/page-6.jpg" alt="Plushie"/></div>
-            <div class="ft-slide-cap">
-              <span>06 &nbsp;·&nbsp; 06</span>
-              <b>Plushie&nbsp;·&nbsp;ぬいぐるみ</b>
-            </div>
-          </article>
+          <article class="ft-slide lightbox-trigger" style="--i:0"  data-src="assets/project/page-01.jpg" data-num="01 / 17" data-title="Cover · 表紙" data-meta="FORMLESS Vol.01"><div class="ft-slide-img"><img src="assets/project/page-01.jpg" alt=""/></div><div class="ft-slide-cap"><span>01 / 17</span><b>Cover&nbsp;·&nbsp;表紙</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:1"  data-src="assets/project/page-02.jpg" data-num="02 / 17" data-title="Index · 目次" data-meta="Table of contents"><div class="ft-slide-img"><img src="assets/project/page-02.jpg" alt=""/></div><div class="ft-slide-cap"><span>02 / 17</span><b>Index&nbsp;·&nbsp;目次</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:2"  data-src="assets/project/page-03.jpg" data-num="03 / 17" data-title="Solstice Blossoms · キャラクター企画" data-meta="梅 &amp; 蓮"><div class="ft-slide-img"><img src="assets/project/page-03.jpg" alt=""/></div><div class="ft-slide-cap"><span>03 / 17</span><b>Character&nbsp;Design</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:3"  data-src="assets/project/page-04.jpg" data-num="04 / 17" data-title="Character Reference · 原稿" data-meta="設定資料"><div class="ft-slide-img"><img src="assets/project/page-04.jpg" alt=""/></div><div class="ft-slide-cap"><span>04 / 17</span><b>Reference&nbsp;·&nbsp;設定</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:4"  data-src="assets/project/page-05.jpg" data-num="05 / 17" data-title="Feature Opening · 特集" data-meta="アニメのグラフィックデザイン"><div class="ft-slide-img"><img src="assets/project/page-05.jpg" alt=""/></div><div class="ft-slide-cap"><span>05 / 17</span><b>Feature&nbsp;·&nbsp;特集</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:5"  data-src="assets/project/page-06.jpg" data-num="06 / 17" data-title="Article · 本文" data-meta="Editorial spread"><div class="ft-slide-img"><img src="assets/project/page-06.jpg" alt=""/></div><div class="ft-slide-cap"><span>06 / 17</span><b>Article&nbsp;·&nbsp;本文</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:6"  data-src="assets/project/page-07.jpg" data-num="07 / 17" data-title="Goods · グッズ展開" data-meta="Can badge · Acrylic"><div class="ft-slide-img"><img src="assets/project/page-07.jpg" alt=""/></div><div class="ft-slide-cap"><span>07 / 17</span><b>Goods&nbsp;·&nbsp;グッズ</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:7"  data-src="assets/project/page-08.jpg" data-num="08 / 17" data-title="Plushie · ぬいぐるみ" data-meta="Finished plush"><div class="ft-slide-img"><img src="assets/project/page-08.jpg" alt=""/></div><div class="ft-slide-cap"><span>08 / 17</span><b>Plushie&nbsp;·&nbsp;ぬいぐるみ</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:8"  data-src="assets/project/page-09.jpg" data-num="09 / 17" data-title="Designer Feature · 草野" data-meta="Interview"><div class="ft-slide-img"><img src="assets/project/page-09.jpg" alt=""/></div><div class="ft-slide-cap"><span>09 / 17</span><b>Interview&nbsp;·&nbsp;対談</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:9"  data-src="assets/project/page-10.jpg" data-num="10 / 17" data-title="Interview · 続き" data-meta="Editorial continued"><div class="ft-slide-img"><img src="assets/project/page-10.jpg" alt=""/></div><div class="ft-slide-cap"><span>10 / 17</span><b>Interview&nbsp;·&nbsp;続</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:10" data-src="assets/project/page-11.jpg" data-num="11 / 17" data-title="Q&amp;A · 質問" data-meta="Designer Q&amp;A"><div class="ft-slide-img"><img src="assets/project/page-11.jpg" alt=""/></div><div class="ft-slide-cap"><span>11 / 17</span><b>Q&amp;A&nbsp;·&nbsp;質問</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:11" data-src="assets/project/page-12.jpg" data-num="12 / 17" data-title="Process · 制作プロセス" data-meta="Behind the scenes"><div class="ft-slide-img"><img src="assets/project/page-12.jpg" alt=""/></div><div class="ft-slide-cap"><span>12 / 17</span><b>Process&nbsp;·&nbsp;制作</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:12" data-src="assets/project/page-13.jpg" data-num="13 / 17" data-title="Design Feature · デザイン" data-meta="Editorial feature"><div class="ft-slide-img"><img src="assets/project/page-13.jpg" alt=""/></div><div class="ft-slide-cap"><span>13 / 17</span><b>Design&nbsp;·&nbsp;デザイン</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:13" data-src="assets/project/page-14.jpg" data-num="14 / 17" data-title="Story · 物語" data-meta="Narrative spread"><div class="ft-slide-img"><img src="assets/project/page-14.jpg" alt=""/></div><div class="ft-slide-cap"><span>14 / 17</span><b>Story&nbsp;·&nbsp;物語</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:14" data-src="assets/project/page-15.jpg" data-num="15 / 17" data-title="Continued · 続編" data-meta="Editorial spread"><div class="ft-slide-img"><img src="assets/project/page-15.jpg" alt=""/></div><div class="ft-slide-cap"><span>15 / 17</span><b>Spread&nbsp;·&nbsp;見開き</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:15" data-src="assets/project/page-16.jpg" data-num="16 / 17" data-title="Ending · 終" data-meta="Closing pages"><div class="ft-slide-img"><img src="assets/project/page-16.jpg" alt=""/></div><div class="ft-slide-cap"><span>16 / 17</span><b>Ending&nbsp;·&nbsp;終</b></div></article>
+          <article class="ft-slide lightbox-trigger" style="--i:16" data-src="assets/project/page-17.jpg" data-num="17 / 17" data-title="Back Cover · 裏表紙" data-meta="The Legend of Hei II · 11.7"><div class="ft-slide-img"><img src="assets/project/page-17.jpg" alt=""/></div><div class="ft-slide-cap"><span>17 / 17</span><b>Back&nbsp;Cover&nbsp;·&nbsp;裏表紙</b></div></article>
         </div>
         <div class="ft-scroll-bar"><i id="ftBar"></i></div>
       </div>
@@ -488,7 +486,7 @@
 
     <div class="works-head">
       <span class="wh-l">// OTHER&nbsp;WORKS</span>
-      <span class="wh-r">10 ENTRIES</span>
+      <span class="wh-r">13 ENTRIES</span>
     </div>
 
     <div class="gallery gallery-arts">
@@ -518,9 +516,9 @@
         <div class="card-info"><span>05</span><b>ミライノヨチ</b></div>
       </article>
       <article class="card card-wide lightbox-trigger" style="--i:5"
-               data-src="assets/arts/art-06.jpg" data-num="06" data-title="Pop Surrealism" data-meta="Acid Graphic">
+               data-src="assets/arts/art-06.jpg" data-num="06" data-title="夢 · Yume" data-meta="Pop Surrealism">
         <img class="card-img" src="assets/arts/art-06.jpg" alt=""/>
-        <div class="card-info"><span>06</span><b>Pop&nbsp;Surrealism</b></div>
+        <div class="card-info"><span>06</span><b>夢&nbsp;·&nbsp;Yume</b></div>
       </article>
       <article class="card card-tall lightbox-trigger" style="--i:6"
                data-src="assets/arts/art-09.jpg" data-num="07" data-title="Distortion · 歪み" data-meta="Acid Illustration">
@@ -533,14 +531,29 @@
         <div class="card-info"><span>08</span><b>Bandaged&nbsp;Eye</b></div>
       </article>
       <article class="card lightbox-trigger" style="--i:8"
-               data-src="assets/arts/art-04.jpg" data-num="09" data-title="Still Life · Sweep" data-meta="Pencil Sketch">
-        <img class="card-img" src="assets/arts/art-04.jpg" alt=""/>
-        <div class="card-info"><span>09</span><b>Still&nbsp;Life&nbsp;I</b></div>
+               data-src="assets/arts/art-11.jpg" data-num="09" data-title="Q · Chibi" data-meta="Character emblem">
+        <img class="card-img" src="assets/arts/art-11.jpg" alt=""/>
+        <div class="card-info"><span>09</span><b>Q&nbsp;·&nbsp;Chibi</b></div>
       </article>
-      <article class="card lightbox-trigger" style="--i:9"
-               data-src="assets/arts/art-05.jpg" data-num="10" data-title="Still Life · Gloves" data-meta="Pencil Sketch">
+      <article class="card card-wide lightbox-trigger" style="--i:9"
+               data-src="assets/arts/art-13.jpg" data-num="10" data-title="Velmora · 桜チョコレート" data-meta="Packaging Design">
+        <img class="card-img" src="assets/arts/art-13.jpg" alt=""/>
+        <div class="card-info"><span>10</span><b>Velmora&nbsp;·&nbsp;Packaging</b></div>
+      </article>
+      <article class="card card-wide lightbox-trigger" style="--i:10"
+               data-src="assets/arts/art-14.jpg" data-num="11" data-title="Character Sketch · 角色設計" data-meta="Rough · Two OCs">
+        <img class="card-img" src="assets/arts/art-14.jpg" alt=""/>
+        <div class="card-info"><span>11</span><b>Character&nbsp;Sketch</b></div>
+      </article>
+      <article class="card lightbox-trigger" style="--i:11"
+               data-src="assets/arts/art-04.jpg" data-num="12" data-title="Still Life · Sweep" data-meta="Pencil Sketch">
+        <img class="card-img" src="assets/arts/art-04.jpg" alt=""/>
+        <div class="card-info"><span>12</span><b>Still&nbsp;Life&nbsp;I</b></div>
+      </article>
+      <article class="card lightbox-trigger" style="--i:12"
+               data-src="assets/arts/art-05.jpg" data-num="13" data-title="Still Life · Gloves" data-meta="Pencil Sketch">
         <img class="card-img" src="assets/arts/art-05.jpg" alt=""/>
-        <div class="card-info"><span>10</span><b>Still&nbsp;Life&nbsp;II</b></div>
+        <div class="card-info"><span>13</span><b>Still&nbsp;Life&nbsp;II</b></div>
       </article>
     </div>
   </section>

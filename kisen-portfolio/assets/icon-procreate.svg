@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <linearGradient id="pcBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1F1F23"/>
+      <stop offset="1" stop-color="#0F0F12"/>
+    </linearGradient>
+    <linearGradient id="pcText" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFE76A"/>
+      <stop offset="0.25" stop-color="#FF6B9D"/>
+      <stop offset="0.55" stop-color="#B47FE5"/>
+      <stop offset="0.8" stop-color="#5A8FF0"/>
+      <stop offset="1" stop-color="#3FD9C9"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="52" fill="url(#pcBg)"/>
+  <text x="120" y="166" text-anchor="middle" font-family="'Inter','Helvetica',sans-serif"
+        font-weight="800" font-size="138" fill="url(#pcText)" letter-spacing="-4">Pc</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <linearGradient id="csBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDEDF0"/>
+      <stop offset="1" stop-color="#C2C2C8"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="52" fill="url(#csBg)" stroke="#B0B0B8" stroke-width="2"/>
+  <text x="120" y="166" text-anchor="middle" font-family="'Inter','Helvetica',sans-serif"
+        font-weight="800" font-size="138" fill="#2A2A30" letter-spacing="-4">Cs</text>
+</svg>
